@@ -7,10 +7,10 @@ import os
 
 EDAMAM_APP_ID = os.getenv("EDAMAM_APP_ID")
 EDAMAM_APP_KEY = os.getenv("EDAMAM_APP_KEY")
-EDAMAM_URL = "https://api.edamam.com/api/recipes/v2"
+EDAMAM_URL = os.getenv("EDAMAM_URL")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-if not all([EDAMAM_APP_ID, EDAMAM_APP_KEY, OPENAI_API_KEY]):
+if not all([EDAMAM_APP_ID, EDAMAM_APP_KEY, EDAMAM_URL, OPENAI_API_KEY]):
     print("One or more environment variables are missing!")
 
 app = Flask(__name__)
