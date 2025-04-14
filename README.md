@@ -4,14 +4,14 @@
 
 ![Screenshot 2025-04-13 at 11 05 51 PM](https://github.com/user-attachments/assets/4f5e5487-816b-43b2-b983-63e3503dac4e)
 
+<h2>Live</h2>
+<p>https://recipe-chatbot-434r.onrender.com/</p>
+
 <h2>Demo</h2>
 
 https://youtu.be/KfTZ1YASxcs
 
 https://github.com/user-attachments/assets/841108a3-fd7d-4194-b821-cebe19c6dcdf
-
-<h2>Live</h2>
-<p>https://recipe-chatbot-434r.onrender.com/</p>
 
 <h2>Features</h2>
 <ul>
@@ -19,6 +19,14 @@ https://github.com/user-attachments/assets/841108a3-fd7d-4194-b821-cebe19c6dcdf
   <li>Implemented with serverside rendering</li>
   <li>Connected to "Edamam API" to show the recipe data</li>
 </ul>
+
+<h2>Challenges</h2>
+<ul>
+  <li>Connecting to the 3rd party API with LLM => utilized LangChain</li>
+  <li>Formatting the responses to render from the server side => added a method to structure it</li>
+  <li>Adding additional features, such as adding similar recipes, utilizing the vector databases like PineCone</li>
+</ul>
+
 
 <h2>System Architecture Diagram</h2>
 
