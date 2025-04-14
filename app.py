@@ -10,6 +10,9 @@ EDAMAM_APP_KEY = os.getenv("EDAMAM_APP_KEY")
 EDAMAM_URL = "https://api.edamam.com/api/recipes/v2"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+if not all([EDAMAM_APP_ID, EDAMAM_APP_KEY, OPENAI_API_KEY]):
+    print("One or more environment variables are missing!")
+
 app = Flask(__name__)
 
 # recipe search
@@ -20,9 +23,19 @@ def search_recipes(query):
         "app_id": EDAMAM_APP_ID,
         "app_key": EDAMAM_APP_KEY,
     }
-    response = requests.get(EDAMAM_URL, params=params)
-    data = response.json()
     
+    try:
+        response = requests.get(EDAMAM_URL, params=params)
+        response.raise_for_status()
+        data = response.json()
+        print("Edamam API Response:", data)
+    except requests.RequestException as e:
+        print("Error during Edamam request:", e)
+        return "Error fetching recipes."
+    except ValueError as e:
+        print("Error parsing JSON:", e)
+        return "Invalid response format."
+
     if "hits" not in data:
         return "No recipes found."
 
