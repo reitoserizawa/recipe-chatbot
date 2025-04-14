@@ -20,6 +20,11 @@ https://github.com/user-attachments/assets/841108a3-fd7d-4194-b821-cebe19c6dcdf
   <li>Connected to "Edamam API" to show the recipe data</li>
 </ul>
 
+<h2>System Architecture Diagram</h2>
+
+![Screenshot 2025-04-13 at 11 48 57 PM](https://github.com/user-attachments/assets/142c3b42-a383-45c0-bb83-f8bb2ca50bc4)
+
+
 <h2>3rd party API</h2>
 <ul>
   <li>Edamam API: https://www.edamam.com/</li>
