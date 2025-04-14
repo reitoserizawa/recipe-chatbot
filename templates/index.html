@@ -37,11 +37,23 @@
             });
 
             function appendMessage(sender, text) {
-                const msg = document.createElement('div');
-                msg.innerHTML = `<strong>${sender}:</strong> ${text.replace(/\\n/g, '<br>')}`;
-                msg.className = 'mb-2';
-                chatBox.appendChild(msg);
-                chatBox.scrollTop = chatBox.scrollHeight;
+                const msgWrapper = document.createElement('div');
+                msgWrapper.className = 'mb-4';
+
+                const senderLabel = document.createElement('div');
+                senderLabel.innerHTML = `<strong>${sender}:</strong>`;
+                msgWrapper.appendChild(senderLabel);
+
+                const messageContent = document.createElement('div');
+
+                if (sender === 'Bot') {
+                    messageContent.innerHTML = text;
+                } else {
+                    messageContent.textContent = text;
+                }
+
+                msgWrapper.appendChild(messageContent);
+                chatBox.appendChild(msgWrapper);
             }
         </script>
     </body>

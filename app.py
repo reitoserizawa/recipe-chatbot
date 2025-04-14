@@ -57,12 +57,13 @@ def edamam_tool_func(query):
     html = "<div><strong>Here are some recipes I found:</strong><ul>"
     for r in results:
         html += f"""
+            <br />
             <li>
-                <strong>{r['label']}</strong><br />
-                <a href="{r['url']}" target="_blank">View Recipe</a><br />
+                <strong><em>{r['label']}</em></strong><br />
+                <u><a href="{r['url']}" target="_blank">View Recipe (Click)</a></u><br />
                 <em>Ingredients:</em>
                 <ul>
-                    {''.join(f"<li>{ingredient}</li>" for ingredient in r['ingredients'])}
+                    {''.join(f"<li>&nbsp;{ingredient}</li>" for ingredient in r['ingredients'])}
                 </ul>
             </li>
         """
@@ -74,7 +75,7 @@ edamam_tool = Tool(
     name="RecipeSearch",
     func=edamam_tool_func,
     return_direct = True,
-    description="Recipe search tool",
+    description="This is a recipe search AI assitant tool.",
 )
 
 llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, temperature=0)
